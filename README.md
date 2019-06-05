@@ -557,6 +557,41 @@ SELECT COUNT(*) FROM employee WHERE city = 'Lethbridge';
 
 ## Table - invoice 
 
+#### My Answers
+
+1)
+SELECT COUNT(billing_country) FROM invoice
+WHERE billing_country = 'USA'
+
+2)
+SELECT * FROM invoice
+ORDER BY(total) DESC
+Limit 1
+ 
+3)
+SELECT * FROM invoice
+ORDER BY(total) ASC
+Limit 1
+
+4)
+SELECT * FROM invoice
+WHERE total > 5
+
+5)
+SELECT COUNT(total) FROM invoice
+WHERE total < 5
+
+6)
+SELECT COUNT(total) FROM invoice
+WHERE billing_state IN ('CA', 'TX', 'AZ')
+
+7)
+SELECT AVG(total) FROM invoice
+
+8)
+SELECT SUM(total) FROM invoice
+
+
 ### Instructions
 
 1. Count how many orders were made from the USA.
