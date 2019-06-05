@@ -463,6 +463,31 @@ SELECT * FROM artist WHERE name LIKE '%Black%';
 
 ## Table - employee
 
+#### My Answers
+
+1)
+SELECT first_name, last_name FROM employee
+WHERE city = 'Calgary'
+
+2)
+SELECT * FROM employee
+ORDER BY(birth_date) DESC
+Limit 1
+
+3)
+SELECT * FROM employee
+ORDER BY(birth_date) ASC
+Limit 1
+
+4)
+SELECT * FROM employee
+WHERE reports_to = 1
+
+5)
+SELECT COUNT(city) FROM employee
+WHERE city = 'Lethbridge'
+
+
 ### Instructions
 
 1. List all employee first and last names only that live in Calgary.
