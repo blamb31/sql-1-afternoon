@@ -28,6 +28,75 @@ Any new tables or records that we add into the database will be removed after yo
 13. List all the people in the person table where their favorite color is orange, green or blue (use IN).
 14. List all the people in the person table where their favorite color is yellow or purple (use IN).
 
+#### My Answers
+
+1)
+CREATE TABLE person (
+	id SERIAL PRIMARY KEY,
+  name VARCHAR,
+  favorite_color VARCHAR,
+  height INT,
+  age INT
+) 
+
+2)
+INSERT INTO person(name, favorite_color, height, age)
+VALUES('Alex', 'Blue', 168, 19)
+VALUES('Preston', 'Yellow', 195, 29)
+VALUES('Cameron', 'Green', 165, 27)
+VALUES('Zack', 'Red', 175, 25)
+VALUES('Blake', 'Orange', 195, 22)
+
+3)
+SELECT height FROM person
+ORDER BY ABS(height) DESC
+
+4)
+SELECT height FROM person
+ORDER BY ABS(height) ASC
+
+5)
+SELECT * FROM person
+ORDER BY (age) DESC
+
+6)
+SELECT * FROM person
+WHERE age > 20
+
+7)
+SELECT * FROM person
+WHERE age = 18
+
+8)
+SELECT * FROM person
+WHERE age < 20 OR age > 30
+
+9)
+SELECT * FROM person
+WHERE NOT age = 27
+
+10)
+SELECT * FROM person
+WHERE NOT favorite_color = 'Red'
+
+11)
+SELECT * FROM person
+WHERE NOT favorite_color = 'Red' 
+AND NOT favorite_color = 'Blue'
+
+12)
+SELECT * FROM person
+WHERE favorite_color = 'Orange' OR favorite_color = 'Blue'
+
+13)
+SELECT * FROM person
+WHERE favorite_color IN ('Orange','Green','Blue')
+
+14)
+SELECT * FROM person
+WHERE favorite_color IN ('Yellow','Purple')
+
+
 ### Solution
 
 <details>
@@ -176,6 +245,13 @@ SELECT * FROM person WHERE favorite_color IN ( 'yellow', 'purple' )
 
 </details>
 
+
+
+
+
+
+
+
 ## Table - orders
 
 ### Instructions
@@ -188,6 +264,37 @@ SELECT * FROM person WHERE favorite_color IN ( 'yellow', 'purple' )
 4. Calculate the total number of products ordered.
 5. Calculate the total order price.
 6. Calculate the total order price by a single person_id.
+
+#### My Answers
+
+1)
+CREATE TABLE orders(
+	person_id SERIAL PRIMARY KEY,
+  product_name VARCHAR,
+  product_price DECIMAL,
+  quantity INT
+)
+
+2)
+INSERT INTO orders(product_name, product_price, quantity)
+VALUES ('Shrimp', 10.82, 2)
+VALUES ('Chicken', 8.22, 5)
+VALUES ('Halibut', 14.22, 1)
+VALUES ('Lobsert', 18.96, 2)
+VALUES ('Steak', 12.56, 3)
+
+3)
+SELECT * FROM orders
+
+4)
+SELECT SUM(quantity) FROM orders
+
+5)
+SELECT SUM(quantity*product_price) FROM orders
+
+6)
+ELECT SUM(quantity*product_price) FROM orders
+Where person_id = 4
 
 ### Solution
 
@@ -259,6 +366,9 @@ SELECT SUM(product_price * quantity) FROM orders WHERE person_id = 0;
 </details>
 
 ## Table - artist
+
+
+#### My Answers
 
 ### Instructions
 
