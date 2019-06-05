@@ -370,6 +370,31 @@ SELECT SUM(product_price * quantity) FROM orders WHERE person_id = 0;
 
 #### My Answers
 
+1)
+INSERT INTO artist(name)
+VALUES ('P!nk')
+VALUES ('Ed Sheeran')
+VALUES ('Charlie Puth')
+
+2)
+SELECT * FROM artist
+ORDER BY name DESC
+LIMIT 10
+
+3)
+SELECT * FROM artist
+ORDER BY name ASC
+LIMIT 5
+
+4)
+SELECT * FROM artist
+WHERE name LIKE 'Black%'
+
+5)
+SELECT * FROM artist
+WHERE name LIKE '%Black%'
+
+
 ### Instructions
 
 1. Add 3 new artists to the artist table. ( It's already created )
